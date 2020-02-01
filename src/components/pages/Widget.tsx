@@ -20,7 +20,7 @@ const Widget = () => {
   const base = useSelector((state: ReduxState) => state.pockets.exchangeFrom);
   useEffect(() => {
     dispatch(getRates(base));
-    const interval = setInterval(() => dispatch(getRates(base)), 1000000000);
+    const interval = setInterval(() => dispatch(getRates(base)), 10000);
     return () => clearInterval(interval);
   }, [dispatch, base]);
   return (
